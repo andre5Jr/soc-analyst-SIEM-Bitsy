@@ -223,35 +223,35 @@ Expand investigations to DNS, proxy, and EDR logs for richer detection context.
 
 Simulate C2 scenarios to test alert effectiveness and response protocols.
 
-![image alt](image_url) 
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T1-1.png)   
 
-![image alt](image_url) 
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T1-2.png) 
 
-![image alt](image_url) 
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T2-1.png) 
 
-![image alt](image_url) 
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T2-2.png)   
 
-![image alt](image_url) 
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T2-3.png)   
 
-![image alt](image_url) 
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T2-4.png)   
 
-![image alt](image_url) 
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T3-1.png)   
 
-![image alt](image_url) 
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T4-1.png)   
 
-![image alt](image_url) 
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T4-2.png)   
 
-![image alt](image_url) 
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T5-1.png)   
 
-![image alt](image_url) 
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T5-2.png)   
 
-![image alt](image_url) 
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T6-1.png)   
 
-![image alt](image_url) 
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T6-2.png) 
 
-![image alt](image_url) 
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T7-1.png)   
 
-![image alt](image_url) 
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T7-2.png)   
 
-![image alt](image_url) 
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T7-3.png) 
 
