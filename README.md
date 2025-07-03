@@ -223,3 +223,35 @@ Expand investigations to DNS, proxy, and EDR logs for richer detection context.
 
 Simulate C2 scenarios to test alert effectiveness and response protocols.
 
+![image alt](image_url) 
+
+![image alt](image_url) 
+
+![image alt](image_url) 
+
+![image alt](image_url) 
+
+![image alt](image_url) 
+
+![image alt](image_url) 
+
+![image alt](image_url) 
+
+![image alt](image_url) 
+
+![image alt](image_url) 
+
+![image alt](image_url) 
+
+![image alt](image_url) 
+
+![image alt](image_url) 
+
+![image alt](image_url) 
+
+![image alt](image_url) 
+
+![image alt](image_url) 
+
+![image alt](image_url) 
+
