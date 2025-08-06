@@ -34,31 +34,25 @@ This project documents an incident investigation in a simulated SOC environment.
 2. Task Breakdown
 
 ✏️ Task 1: Determine March 2022 log volume
-⭕️ Objective: Find the total number of events logged in March 2022.
+⭕️ Objective: How many events were returned for the month of March 2022?
+
 ⭕️ Method:
 
 In Kibana Discover tab, set time range to March 1–31, 2022.
 
 Observe statistics/hits counter.
-✅ Outcome: 1,482 events identified 
-reddit.com
-+15
-mattheweaton.net
-+15
-harpocrat3s.com
-+15
-reddit.com
-reddit.com
-+9
-medium.com
-+9
-harpocrat3s.com
-+9
+
+🔱 Answer: 1482
 
 📸 Screenshot Space:
 
-✏️ Task 2: Identify the suspicious source IP
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T1-1.png)   
+
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T1-2.png) 
+
+✏️ Task 2: What is the IP associated with the suspected user in the logs?
 ⭕️ Objective: Determine which IP triggered the C2 beacon.
+
 ⭕️ Method:
 
 Filter on source_ip field.
@@ -66,105 +60,93 @@ Filter on source_ip field.
 Note two unique IPs: one with ~99.6% traffic, the other ~0.4%.
 
 Drill into lower-volume IP via user agent filter.
-✅ Outcome: Suspicious IP: 192.166.65.54 
-github.com
-+8
-mattheweaton.net
-+8
-mahmoudelfawair.medium.com
-+8
+
+🔱 Answer: 192.166.65.54
 
 📸 Screenshot Space:
 
-✏️ Task 3: Identify the Windows binary used
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T2-1.png) 
+
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T2-2.png)   
+
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T2-3.png)   
+
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T2-4.png)   
+
+✏️ Task 3: The user’s machine used a legit windows binary to download a file from the C2 server. What is the name of the binary?
 ⭕️ Objective: Spot the legitimate binary used to download C2 content.
+
 ⭕️ Method:
 
 Inspect user_agent for 192.166.65.54.
 
-Identify binary name in the logs.
-✅ Outcome: bitsadmin 
-jacob-taylor.gitbook.io
-+7
-mattheweaton.net
-+7
-mahmoudelfawair.medium.com
-+7
+🔱 Answer: bitsadmin
 
 📸 Screenshot Space:
 
-✏️ Task 4: Recognize the C2 host
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T3-1.png)   
+
+✏️ Task 4: The infected machine connected with a famous filesharing site in this period, which also acts as a C2 server used by the malware authors to communicate. What is the name of the filesharing site?
 ⭕️ Objective: Name the remote file-hosting site used for C2.
-⭕️ Method:
+
+⭕️ Method: 
 
 Review host field in filtered logs.
-✅ Outcome: pastebin.com 
-medium.com
-+7
-medium.com
-+7
-jacob-taylor.gitbook.io
-+7
-medium.com
-+5
-mattheweaton.net
-+5
-mahmoudelfawair.medium.com
-+5
+
+🔱 Answer: pastebin.com
 
 📸 Screenshot Space:
 
-✏️ Task 5: Reconstruct the full C2 URL
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T4-1.png)   
+
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T4-2.png)   
+
+✏️ Task 5: What is the full URL of the C2 to which the infected host is connected?
 ⭕️ Objective: Discover the exact URL for payload retrieval.
+
 ⭕️ Method:
 
 Combine host and uri fields from the log.
-✅ Outcome: pastebin.com/yTg0Ah6a 
-mahmoudelfawair.medium.com
-+1
-medium.com
-+1
-jacob-taylor.gitbook.io
-+5
-mattheweaton.net
-+5
-mahmoudelfawair.medium.com
-+5
+
+🔱 Answer: pastebin.com/yTg0Ah6a
 
 📸 Screenshot Space:
 
-✏️ Task 6: Identify the file name accessed
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T5-1.png)   
+
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T5-2.png)   
+
+✏️ Task 6: A file was accessed on the filesharing site. What is the name of the file accessed?
 ⭕️ Objective: Name the file downloaded and retrieve its contents.
+
 ⭕️ Method:
 
 Visit reconstructed URL.
-✅ Outcome: File downloaded: secret.txt containing the flag 
-mahmoudelfawair.medium.com
-+1
-sowl1.github.io
-+1
-reddit.com
-+1
-reddit.com
-+1
+
+🔱 Answer: secret.txt
 
 📸 Screenshot Space:
 
-✏️ Task 7: Extract the flag code
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T6-1.png)   
+
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T6-2.png) 
+
+✏️ Task 7: The file contains a secret code with the format THM{_____}.
 ⭕️ Objective: Retrieve the flag in the format THM{_____}.
+
 ⭕️ Method:
 
 View content of secret.txt.
-✅ Outcome: Flag revealed: THM{SECRET__CODE} 
-reddit.com
-enescayvarli.medium.com
-+10
-medium.com
-+10
-medium.com
-+10
+
+🔱 Answer: THM{SECRET__CODE}
 
 📸 Screenshot Space:
+
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T7-1.png)   
+
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T7-2.png)   
+
+![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T7-3.png) 
 
 3. Analysis and Reflection
 
@@ -222,36 +204,4 @@ Integrate detection rules for misuse of Windows tooling (e.g., bitsadmin) in SIE
 Expand investigations to DNS, proxy, and EDR logs for richer detection context.
 
 Simulate C2 scenarios to test alert effectiveness and response protocols.
-
-![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T1-1.png)   
-
-![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T1-2.png) 
-
-![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T2-1.png) 
-
-![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T2-2.png)   
-
-![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T2-3.png)   
-
-![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T2-4.png)   
-
-![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T3-1.png)   
-
-![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T4-1.png)   
-
-![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T4-2.png)   
-
-![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T5-1.png)   
-
-![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T5-2.png)   
-
-![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T6-1.png)   
-
-![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T6-2.png) 
-
-![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T7-1.png)   
-
-![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T7-2.png)   
-
-![image alt](https://github.com/andre5Jr/soc-analyst-SIEM-Bitsy/blob/2e5bfb229fb33ef7c0e93005550e37817fe2c701/T7-3.png) 
 
